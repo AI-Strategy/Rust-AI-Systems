@@ -1,0 +1,43 @@
+name: Backend CI
+
+on:
+  pull_request:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/ci-backend.yml'
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test-backend: # <--- This matches the name you select in Settings
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend # Vital for Monorepo
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      # Smart Caching to speed up builds
+      - name: Cache Cargo Registry
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            backend/target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Install Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Check Formatting
+        run: cargo fmt -- --check
+
+      - name: Run Clippy (Linting)
+        run: cargo clippy -- -D warnings
+
+      - name: Run Tests
+        run: cargo test --verbose
