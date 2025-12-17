@@ -22,3 +22,14 @@ Technology Stack
     Reasoning: Gemini 3.0 Pro (1M+ Token Context)
 
     Infrastructure: Google Cloud Platform (Cloud Run, Vertex AI)
+
+    Component,Version,License,Purpose
+
+The Core Stack (High-Level BOM)
+
+Rust,stable (1.75+),MIT/Apache-2.0,Core language for backend logic.
+Axum,0.7,MIT,Asynchronous web framework (Tokio-based).
+Neo4j,5.x (Aura),Commercial/GPL,Graph Database & Vector Search Engine.
+Tokio,1.x,MIT,Async runtime for high-concurrency I/O.
+Google Cloud SDK,latest,Apache-2.0,Hosting (Cloud Run) & AI (Vertex).
+VS Code API,^1.85.0,MIT,Editor integration framework.
