@@ -1,0 +1,24 @@
+name: 🐛 Bug Report
+description: Create a report to help us improve
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Backend (Rust)
+        - Extension (VS Code)
+        - Knowledge Graph (Neo4j)
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs
+      description: "Paste the JSON logs from Cloud Run or VS Code Output"
+      render: json
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      options:
+        - label: I have checked the 'Daily Security Patrol' for existing alerts.
+          required: true
