@@ -1,0 +1,13 @@
+# Global Fallback
+* @rust-ai-systems/core-team
+
+# Backend (Rust/Axum)
+/backend/       @rust-ai-systems/rust-engineers
+/backend/src/infra/  @rust-ai-systems/ops
+
+# Client (VS Code)
+/extension/     @rust-ai-systems/frontend-engineers
+
+# Infrastructure & Governance
+/infrastructure/    @rust-ai-systems/ops
+/infra_manifest.yaml @rust-ai-systems/arch-leads
