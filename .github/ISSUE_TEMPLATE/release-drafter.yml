@@ -1,0 +1,15 @@
+name-template: 'v$RESOLVED_VERSION '
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '🚀 New Features'
+    labels:
+      - 'kind/feature'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'kind/bug'
+  - title: '🔒 Security'
+    labels:
+      - 'kind/security'
+      - 'area/security'
+exclude-labels:
+  - 'kind/chore'
